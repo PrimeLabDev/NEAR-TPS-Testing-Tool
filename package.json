@@ -1,0 +1,40 @@
+{
+  "name": "transfer-examples",
+  "version": "1.0.0",
+  "description": "Examples of constructing, signing, and sending transactions to the NEAR blockchain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "lint-staged": "eslint --fix",
+    "lint": "eslint"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "git add"
+    ]
+  },
+  "keywords": [
+    "nearprotocol",
+    "blockchain",
+    "transaction"
+  ],
+  "author": "Josh Ford",
+  "license": "ISC",
+  "dependencies": {
+    "bn": "^1.0.5",
+    "dotenv": "^8.2.0",
+    "js-sha256": "^0.9.0",
+    "near-api-js": "^0.30.0",
+    "p-queue": "^7.1.0",
+    "verror": "^1.10.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7"
+  },
+  "type": "module"
+}
