@@ -91,29 +91,6 @@ async function main() {
     console.log('deploying the exec wasm');
     await execAccount.deployContract(fs.readFileSync(`contracts/${config.WASM_EXEC}`));
 
-    let exec = new nearAPI.Contract(
-      execAccount,
-      EXEC_CONTRACT,
-      {
-        viewMethods: ['version'],
-        changeMethods: ['new'],
-        sender: execAccount
-      }
-    );
-
-    console.log('initializing the exec');
-    await exec.new(
-      {
-        owner_id: EXEC_CONTRACT
-      },
-      '300000000000000',
-      '0'
-    );
-
-    let execVersion = await exec.version();
-    console.log('exec version:');
-    console.log(execVersion);
-
     // deploys and initializes the counter contract
     console.log('setting key for the counter');
     await keyStore.setKey(config.NETWORK_ID, COUNTER_CONTRACT, keyPair);
