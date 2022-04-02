@@ -56,20 +56,11 @@ async function main() {
       userFactoryAccount,
       config.CONTRACT_USER_FACTORY,
       {
-        viewMethods: ['version'],
-        changeMethods: ['new', 'create_subaccount'],
+        viewMethods: [],
+        changeMethods: ['create_subaccount'],
         sender: userFactoryAccount
       }
     );
-
-    // initializes the user factory contract
-    console.log('initializing the user-factory');
-    await factory.new({}, 300000000000000, 0);
-
-    // check the version of the user factory
-    console.log('user-factory version:');
-    let factoryVersion = await factory.version();
-    console.log(factoryVersion);
 
     // deploys and initializes the exec contract
     console.log('setting key for the exec');
