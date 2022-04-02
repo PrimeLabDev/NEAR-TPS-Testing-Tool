@@ -1,5 +1,5 @@
 # NEAR-TPS-Testing-Tool
-Utility for load testing RPC nodes within the NEAR protocol
+Utility to perform TPS load testing on NEAR Protocol
 
 
 ## Prerequisites
