@@ -1,15 +1,14 @@
 # NEAR-TPS-Testing-Tool
 Utility for load testing RPC nodes within the NEAR protocol
 
-# Transaction Broadcasting
 
 ## Prerequisites
 
 - Current version of [Node.js](https://nodejs.org/). >=v14.0.0
 - Contract wasm files updated and copied to this directory.
-  - `nearapps_user_factory.wasm`. Used to create the necessary users.
-  - `nearapps_exec.wasm`. Used to setup the counter.
-  - `nearapps_counter.wasm`. The contract that will be called.
+  - `account_factory.wasm`: Used to create the necessary accounts. ([related NEAR documentation](https://www.near-sdk.io/promises/deploy-contract))
+  - `exec.wasm`: Used to deploy & proxy calls to the contract being called.
+  - `counter.wasm`: The contract that will be called. (e.g. [NEAR's Rust counter contract](https://github.com/near-examples/rust-counter/tree/master/contract))
 
 ## Setup
 
@@ -17,9 +16,9 @@ Utility for load testing RPC nodes within the NEAR protocol
     ```bash
     npm i
     ```
-2. For the first run, dev-deploy a clean/new `nearapps_user_factory.wasm` contract.
+2. For the first run, dev-deploy a clean/new `user_factory.wasm` contract.
     ```bash
-    near dev-deploy --wasmFile=nearapps_user_factory.wasm
+    near dev-deploy --wasmFile=user_factory.wasm
     ```
     In case of any failure, you can clean the `neardev/` directory and retry.
 3. Update the values on `config.js`.
