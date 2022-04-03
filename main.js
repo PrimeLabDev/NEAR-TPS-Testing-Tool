@@ -80,7 +80,7 @@ async function main() {
     const execAccount = await near.account(EXEC_CONTRACT);
 
     console.log('deploying the exec wasm');
-    await execAccount.deployContract(fs.readFileSync(`contracts/${config.WASM_EXEC}`));
+    await execAccount.deployContract(fs.readFileSync(`contracts/res/${config.WASM_EXEC}`));
 
     // deploys and initializes the counter contract
     console.log('setting key for the counter');
@@ -100,7 +100,7 @@ async function main() {
     const counterAccount = await near.account(COUNTER_CONTRACT);
 
     console.log('deploying the counter wasm');
-    await counterAccount.deployContract(fs.readFileSync(`contracts/${config.WASM_COUNTER}`));
+    await counterAccount.deployContract(fs.readFileSync(`contracts/res/${config.WASM_COUNTER}`));
 
     for (let i = 0; i < config.USER_LEN; i += 1) {
       let userPrefix = `u${i}`;
