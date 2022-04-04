@@ -13,7 +13,7 @@ const QUEUE_SIZE = Math.floor((30 * 3) / USER_LEN);
 //
 const WASM_EXEC = 'exec.wasm';
 const WASM_COUNTER = 'counter.wasm';
-// the method that will be called on `CONTRACT_WASM`
+// the method that will be called on `WASM_COUNTER`
 const ACTION_METHOD = 'increment';
 const ACTION_ARGS = {};
 const ACTION_GAS = 50000000000000;
