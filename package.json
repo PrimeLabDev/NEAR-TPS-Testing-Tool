@@ -19,7 +19,14 @@
     "blockchain",
     "transaction"
   ],
-  "author": "Josh Ford",
+  "contributors": [
+    {
+      "name": "Josh Ford"
+    },
+    {
+      "name": "Sebastian Gerske"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "bn": "^1.0.5",
